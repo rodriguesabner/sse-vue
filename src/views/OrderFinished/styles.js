@@ -13,6 +13,48 @@ export const Container = styled.div`
   background: #000;
   height: 100%;
   color: #fff;
+  padding: 2em;
+
+  h1 {
+    text-align: center;
+  }
+
+  .pedido {
+    padding: 2em;
+    background: #131313;
+    margin-top: 2em;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 600px;
+
+    ul {
+      list-style-type: none;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+
+        p {
+          font-size: 18px;
+        }
+
+        :last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .total {
+      margin-top: 2em;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #fff;
+      padding-top: 10px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
 `;
 
 export const ImageComponent = styled.img`

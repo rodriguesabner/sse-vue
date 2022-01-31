@@ -57,17 +57,13 @@ export default {
     registerClientToSSE() {
       const { token } = this.$route.params;
 
-      const eventSource = new EventSource(`http://localhost:3010/sse/${token}`);
+      const eventSource = new EventSource(`http://192.168.15.46:3010/sse/${token}`);
       eventSource.onmessage = (event) => {
         const data = JSON.parse(event.data);
 
         this.listening = false;
-        this.$router.push('/order/order-finished', {
-          state: {
-            order: data,
-          },
-        });
 
+        this.$router.push({ name: 'OrderFinished', params: { order: data } });
         eventSource.close();
       };
     },
